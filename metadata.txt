@@ -1,0 +1,16 @@
+; the next section is mandatory
+[general]
+name=Event layer plugin
+qgisMinimumVersion=1.8
+qgisMaximumVersion=2.99
+description=A plugin for creating event themes using linear referencing functions (locate_between, locate_along)
+category=Vector
+version=version 1.3.0
+
+homepage=http://www.sourcepole.ch/
+repository=http://plugins.qgis.org/plugins/event_layer/
+tracker=n.a.
+
+author=Sourcepole
+email=nikolaus.batlogg@vorarlberg.at
+; end of mandatory metadata
