@@ -24,7 +24,7 @@ def icon():
 	return "eventlayer.png"
 
 def version():
-    return "1.3.0"
+    return "1.3.1"
 
 def qgisMinimumVersion():
   return "1.0"

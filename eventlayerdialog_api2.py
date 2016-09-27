@@ -31,7 +31,7 @@ class EventLayerDialog( QDialog,  Ui_EventLayerDialogBase ):
                 if layer.wkbType() == QGis.WKBLineString25D or layer.wkbType() == QGis.WKBMultiLineString25D:
                     self.mLineLayerComboBox.addItem( layer.name(),  layerId )
             else:
-                if QGis.QgsWKBTypes.singleType( QGis.QgsWKBTypes.flatType( layerType ) ) == QGis.QgsWKBTypes.LineString and ( QGis.QgsWKBTypes.hasZ( layerType ) or QGis.QgsWKBTypes.hasM( layerType ) ):
+                if QgsWKBTypes.singleType( QgsWKBTypes.flatType( QGis.fromOldWkbType(layer.wkbType() ) )) == QgsWKBTypes.LineString and ( QgsWKBTypes.hasZ( QGis.fromOldWkbType(layer.wkbType() )  ) or QgsWKBTypes.hasM( QGis.fromOldWkbType(layer.wkbType() )  ) ):
                 #if layer.wkbType() == QgsWKBTypes.LineStringM or layer.wkbType() == QgsWKBTypes.MultiLineStringM:
                     self.mLineLayerComboBox.addItem( layer.name(),  layerId )
 
