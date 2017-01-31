@@ -219,6 +219,14 @@ class EventLayerPlugin(QDialog):    # inherit of QDialog is needed to install an
             eventLayer = layerMap[eventLayerId]
             memoryLayer = layerMap[memoryLayerId ]
 
+            # remove memory layer attibute fileds first
+            # they are new created
+            # by the eventlayer method!
+            memoryLayer.startEditing()
+            memoryLayer.deleteAttributes(memoryLayer.attributeList())
+            memoryLayer.commitChanges()
+
+
             analyzer = QgsGeometryAnalyzer()
 
             # notify user about progress
@@ -229,6 +237,7 @@ class EventLayerPlugin(QDialog):    # inherit of QDialog is needed to install an
             forceSingleGeoms = False
             if forceSingleGeometries[i] == "true":
                 forceSingleGeoms = True
+
 
             #API up to 2.2
             if QGis.QGIS_VERSION_INT < 20300:
@@ -252,6 +261,8 @@ class EventLayerPlugin(QDialog):    # inherit of QDialog is needed to install an
                     self.mMemoryLayers[memoryLayerId] = EventLayerParameters( lineLayerId,  eventLayerId,  int(lineFields[i]),  int(eventFields[i]),   int(fromFields[i]),  int(toFields[i]),  memoryLayerId,  forceSingleGeoms,  int(offsetFields[i]),  float(offsetScales[i]) )
                 if len( returnValue[1] ) > 0:
                     self.show_msgb(returnValue[1],eventLayer)
+
+
 
 
         self.mIface.mapCanvas().refresh()

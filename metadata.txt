@@ -1,4 +1,3 @@
-; the next section is mandatory
 [general]
 name=Event layer plugin
 qgisMinimumVersion=1.8
@@ -9,9 +8,8 @@ category=Vector
 version=version 1.3.1
 
 homepage=http://www.sourcepole.ch/
-repository=http://plugins.qgis.org/plugins/event_layer/
-tracker=n.a.
+repository=https://github.com/klausib/event_layer
+tracker=https://github.com/klausib/event_layer/issues
 
 author=Sourcepole
 email=nikolaus.batlogg@vorarlberg.at
-; end of mandatory metadata
