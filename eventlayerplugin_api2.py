@@ -344,6 +344,7 @@ class EventLayerPlugin(QDialog):    # inherit of QDialog is needed to install an
                 memoryLayer = layerMap[memoryLayerId ]
 
 
+
                 # edit session
                 memoryLayer.startEditing()
                 # in case of an update, delete all existing features first
